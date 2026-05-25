@@ -1,15 +1,35 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import DuaaPage from './pages/DuaaPage';
 import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
+function ScrollHandler() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <ScrollHandler />
         {/* Decorative background elements */}
         <div className="bg-circle bg-circle-1"></div>
         <div className="bg-circle bg-circle-2"></div>

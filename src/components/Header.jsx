@@ -21,11 +21,11 @@ export default function Header() {
         
         {/* Desktop Nav */}
         <ul className="nav-links desktop-only">
-          <li><a href="/#virtues">فضل الدعاء</a></li>
-          <li><a href="/#times">أوقات الإجابة</a></li>
-          <li><a href="/#names">أسماء الله الحسنى</a></li>
-          <li><a href="/duaa#quran">من القرآن</a></li>
-          <li><a href="/duaa#sunnah">من السنة</a></li>
+          <li><Link to="/#virtues">فضل الدعاء</Link></li>
+          <li><Link to="/#times">أوقات الإجابة</Link></li>
+          <li><Link to="/#names">أسماء الله الحسنى</Link></li>
+          <li><Link to="/duaa#quran">من القرآن</Link></li>
+          <li><Link to="/duaa#sunnah">من السنة</Link></li>
         </ul>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -53,11 +53,11 @@ export default function Header() {
       {isMenuOpen && (
         <div className="mobile-menu glass">
           <ul className="mobile-nav-links">
-            <li><a href="/#virtues" onClick={closeMenu}>فضل الدعاء</a></li>
-            <li><a href="/#times" onClick={closeMenu}>أوقات الإجابة</a></li>
-            <li><a href="/#names" onClick={closeMenu}>أسماء الله الحسنى</a></li>
-            <li><a href="/duaa#quran" onClick={closeMenu}>من القرآن</a></li>
-            <li><a href="/duaa#sunnah" onClick={closeMenu}>من السنة</a></li>
+            <li><Link to="/#virtues" onClick={closeMenu}>فضل الدعاء</Link></li>
+            <li><Link to="/#times" onClick={closeMenu}>أوقات الإجابة</Link></li>
+            <li><Link to="/#names" onClick={closeMenu}>أسماء الله الحسنى</Link></li>
+            <li><Link to="/duaa#quran" onClick={closeMenu}>من القرآن</Link></li>
+            <li><Link to="/duaa#sunnah" onClick={closeMenu}>من السنة</Link></li>
           </ul>
         </div>
       )}
